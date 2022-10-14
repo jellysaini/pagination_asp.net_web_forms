@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OrdersMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderCode" Type="Guid" />
+    <Property Name="OrderName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfDelivery" Type="DateTime" Precision="3" />
+    <Property Name="OrderDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ClientID" Type="Int32" />
+    <Property Name="PriceMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlantID" Type="Int32" />
+    <Property Name="StationID" Type="Int32" />
+    <Property Name="DeliveryAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DiscountAmount" Type="Double" />
+    <Property Name="DiscountType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AdditionalCharges" Type="Double" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="DeletionRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBySalesmanID" Type="Int32" />
+    <Property Name="PrioritySuggestion" Type="Int32" />
+    <Property Name="ItemTax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ProductNature" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="PagingContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OrdersMasters" EntityType="Self.OrdersMaster" />
+  </EntityContainer>
+</Schema>

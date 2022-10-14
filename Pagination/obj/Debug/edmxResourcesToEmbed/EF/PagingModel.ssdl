@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OrdersMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderCode" Type="uniqueidentifier" />
+    <Property Name="OrderName" Type="varchar" MaxLength="250" />
+    <Property Name="DateOfDelivery" Type="datetime" />
+    <Property Name="OrderDescription" Type="varchar" MaxLength="500" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="PriceMethod" Type="varchar" MaxLength="50" />
+    <Property Name="PlantID" Type="int" />
+    <Property Name="StationID" Type="int" />
+    <Property Name="DeliveryAddress" Type="varchar" MaxLength="250" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="DiscountType" Type="varchar" MaxLength="10" />
+    <Property Name="AdditionalCharges" Type="float" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletionRemarks" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedBySalesmanID" Type="int" />
+    <Property Name="PrioritySuggestion" Type="int" />
+    <Property Name="ItemTax" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="ProductNature" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="OrdersMaster" EntityType="Self.OrdersMaster" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
